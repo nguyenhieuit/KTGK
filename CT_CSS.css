@@ -1,0 +1,25 @@
+﻿body {
+}
+#tensp{
+    float:left;
+    font-size:20px;
+    width:100%;
+}
+#Noidung{
+    float:left;
+    width:100%;
+    background-color:coral;
+}
+#img_Sach{
+    float:left;
+    margin-left:50px;
+    width:35%;
+}
+#Label2{
+    float:left;
+}
+#mota{
+    float:left;
+    width:55%;
+    font-size:18px;
+}

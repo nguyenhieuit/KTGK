@@ -1,0 +1,74 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="layer.master.cs" Inherits="KT_GiuaKi.layer" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="css_layer.css" rel="stylesheet" />
+    <style>
+        #Image2{
+            width:100%;
+            height:100px;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="top_bgr">
+            <asp:Image ID="Image1" runat="server" ImageUrl="./images/top_bgr.gif" Width="100%" Height="70px" />
+        </div>
+        <div class="menu">
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Trangchu.aspx">Trang chủ</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Gioithieu.aspx">Giới thiệu</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/SachTV.aspx">Sách tiếng Việt</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/SachTA.aspx">Sách tiếng Anh</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/SongNgu.aspx">Song ngữ</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/LienHe.aspx">Liên hệ</asp:HyperLink>
+        </div>
+        <div class="anhbia">
+            <div class="img_brg">
+                <asp:Image ID="Image2" runat="server" ImageUrl="./Images/bgr_sach.jpg"  />
+            </div>
+            <div class="seach">
+                <div class="timkiem">
+                    <asp:Label ID="Label1" runat="server" Text="Tìm kiếm"></asp:Label>
+                </div>
+                <div class="timkiem_form">
+                    <asp:TextBox ID="TextBox1" runat="server" Height="34px" Width="230px"></asp:TextBox>
+                    <asp:Button ID="Button1" runat="server" Text="Tìm kiếm" Height="38px" />
+                </div>
+            </div>
+        </div>
+        <div class="ND">
+            <div class="left">
+                <h1>Danh mục các loại sách</h1>
+                <asp:DataList ID="DataList1" runat="server">
+                    <ItemTemplate>
+                        <asp:LinkButton ID="LinkButton1" runat="server" Text='<%# Eval("TenLoai")%>'
+                            CommandArgument='<%#Eval("MaLoai") %>'></asp:LinkButton>
+                    </ItemTemplate>
+                </asp:DataList>
+            </div>
+            <div class="mid">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="login">
+                <div class="tieudeKM">
+                    <marquee direction=”right”>Khuyến mãi khi mua sách lên đến 30%</marquee>
+                </div>
+                <asp:Login ID="Login1" runat="server" OnAuthenticate="Login1_Authenticate">
+                </asp:Login>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="bot">
+                <h1>Nguyễn Hiếu Mã sinh viên: 24211202819</h1>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
