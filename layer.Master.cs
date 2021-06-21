@@ -49,5 +49,12 @@ namespace KT_GiuaKi
                 this.Login1.FailureText = "Tên đăng nhập hoặc mật khẩu không đúng";
             }
         }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            String maloai = ((LinkButton)sender).CommandArgument;
+            Context.Items["ML"] = maloai;
+            Server.Transfer("SongNgu.aspx");
+        }
     }
 }
